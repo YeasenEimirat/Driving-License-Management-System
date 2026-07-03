@@ -63,7 +63,7 @@ namespace DVDL.Licenses.Controlls
             _dtInternationalLicensesHistory = clsInternationalLicense.GetAllInternationalLicensesHistory(PersonID);
             dgvInternationalLicensesHistory.DataSource = _dtInternationalLicensesHistory;
 
-            if (_dtInternationalLicensesHistory.Rows.Count > 0)
+            if (dgvInternationalLicensesHistory.Rows.Count > 0)
             {
 
                 dgvInternationalLicensesHistory.Columns[0].Width = 120;

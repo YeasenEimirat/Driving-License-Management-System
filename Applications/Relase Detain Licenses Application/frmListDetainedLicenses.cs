@@ -1,4 +1,7 @@
-﻿using DVDL.Licenses.Detain_License;
+﻿using DVDL.Drivers;
+using DVDL.Licenses;
+using DVDL.Licenses.Controlls;
+using DVDL.Licenses.Detain_License;
 using DVDLBusinessLayer;
 using System;
 using System.Data;
@@ -180,6 +183,37 @@ namespace DVDL.Applications.Relase_Detain_Licenses_Application
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void PesonDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int personID = clsDriver.Find(clsLicenses.Find((int)dgvDetainedLicenses.CurrentRow.Cells[1].Value).DriverID).PersonID;
+            Form frm = new ShowDetailsForm(personID);
+            frm.ShowDialog();
+        }
+
+        private void showDetailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new ShowLicenseDetailes((int)dgvDetainedLicenses.CurrentRow.Cells[1].Value);
+            frm.ShowDialog();
+        }
+
+        private void showPersonLicenseHistoryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int personID = clsDriver.Find(clsLicenses.Find((int)dgvDetainedLicenses.CurrentRow.Cells[1].Value).DriverID).PersonID;
+
+            Form frm = new PersonLicenseHistoryForm(personID);
+            frm.ShowDialog();
+        }
+
+        private void releaseDetainedLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            using (Form frm = new frmReleaseDetainedLicenseApplication())
+            {
+                frm.ShowDialog();
+            }
+            _LoadData();
         }
     }
 }

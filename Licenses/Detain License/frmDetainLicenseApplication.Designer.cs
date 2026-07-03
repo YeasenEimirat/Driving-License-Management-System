@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetainLicenseApplication));
             this.lblTitle = new System.Windows.Forms.Label();
             this.ctrlDriverLicenseInfoWithFilter1 = new DVDL.Licenses.Controlls.ctrlDriverLicenseInfoWithFilter();
@@ -51,12 +52,14 @@
             this.btnDetain = new System.Windows.Forms.Button();
             this.showLicenseHistory1 = new DVDL.Licenses.Controlls.ShowLicenseHistory();
             this.crlShowLicense1 = new DVDL.Licenses.Controlls.crlShowLicense();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.gpDetain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -300,6 +303,10 @@
             this.crlShowLicense1.Size = new System.Drawing.Size(173, 41);
             this.crlShowLicense1.TabIndex = 201;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmDetainLicenseApplication
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -321,6 +328,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -349,5 +357,6 @@
         private System.Windows.Forms.Button btnDetain;
         private Controlls.ShowLicenseHistory showLicenseHistory1;
         private Controlls.crlShowLicense crlShowLicense1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

@@ -14,7 +14,7 @@ namespace DVDL.Drivers
 {
     public partial class PersonLicenseHistoryForm : Form
     {
-        int _PersonID;  
+        int _PersonID = -1;
         public PersonLicenseHistoryForm()
         {
             InitializeComponent();
@@ -51,9 +51,16 @@ namespace DVDL.Drivers
 
         private void userControlFltier1_OnPersonSelected(DVDLBusinessLayer.clsPeople obj)
         {
-            
-            personaLInfoUserControl11.LoadPerson(obj);
+            if (obj != null)
+            {
+                  personaLInfoUserControl11.LoadPerson(obj);
             ctrlDriverLicenses1.PersonID = obj.PersonID;
+            }
+            else
+            {
+                MessageBox.Show("the selected person is not Found please, select again ");
+            }
+          
          
         }
     }

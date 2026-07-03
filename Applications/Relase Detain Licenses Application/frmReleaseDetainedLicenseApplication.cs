@@ -39,14 +39,10 @@ namespace DVDL.Applications.Relase_Detain_Licenses_Application
                 (int)clsApplications.enApplicationType.ReleaseDetainedDrivingLicsense)
                 .ApplicationFees;
 
-            float fees = clsApplicationTypes
-                .FindByApplicationTypeID(
-                (int)clsApplications.enApplicationType.ReplaceLostDrivingLicense)
-                .ApplicationFees;
-
-            lblTotalFees.Text = (fees + ApplicationFees).ToString();
-            lblApplicationFees.Text = fees.ToString();
-            lblFineFees.Text = Detain.FineFees.ToString();
+            float fees = _Licenses.PaidFees ;
+            lblApplicationFees.Text = ApplicationFees.ToString();             // ✅
+            lblFineFees.Text = Detain.FineFees.ToString();                    // ✅
+            lblTotalFees.Text = (ApplicationFees +(float) Detain.FineFees).ToString(); // ✅
             lblDetainDate.Text = Detain.DetainDate.ToString();
             lblDetainID.Text = Detain.DetainID.ToString();
             lblLicenseID.Text = Detain.LicenseID.ToString();
@@ -66,8 +62,17 @@ namespace DVDL.Applications.Relase_Detain_Licenses_Application
             _Licenses = obj;
             crlShowLicense1.Enabled = false;
             showLicenseHistory1.Enabled = false;
-            btnRelease.Enabled = true;
             _LoadLicenseInfo();
+            if (!clsDetainLicense.IsDetained(_Licenses.LicenseID))
+            {
+                MessageBox.Show("the Selected License is Not Detain You cant Release it .",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                return;
+            }
+            btnRelease.Enabled = true;
+
         }
 
         private void btnRelease_Click(object sender, EventArgs e)
@@ -79,9 +84,10 @@ namespace DVDL.Applications.Relase_Detain_Licenses_Application
             {
                 return;
             }
-            if (!clsDetainLicense.IsDetained(_Licenses.LicenseID))
+   if (_Licenses.LicenseID == -1)
             {
-                MessageBox.Show("the Selected License is Not Detain You cant Release it .",
+
+                MessageBox.Show("please select LicenseID First  .",
                                 "Error",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
@@ -111,7 +117,7 @@ namespace DVDL.Applications.Relase_Detain_Licenses_Application
             newApplication.ApplicationStatus = clsApplications.enApplicationStatus.Completed;
             newApplication.LastStatusDate = DateTime.Now;
             newApplication.PaidFees = ApplicationFees;
-            newApplication.CreatedByUserID = oldApplication.CreatedByUserID;
+            newApplication.CreatedByUserID = clsGlopal.CurrentUser.UserID;
 
             if (!newApplication.Save())
             {
@@ -136,13 +142,18 @@ namespace DVDL.Applications.Relase_Detain_Licenses_Application
                        "Error",
                        MessageBoxButtons.OK,
                        MessageBoxIcon.Error);
+                return;
             }
             showLicenseHistory1.Enabled = true;
             crlShowLicense1.Enabled = true;
             crlShowLicense1.licenseID = _Licenses.LicenseID;
             btnRelease.Enabled = false;
             showLicenseHistory1.PersonID = newApplication.ApplicantPersonID;
-            showLicenseHistory1.Enabled = true;
+
+            MessageBox.Show("License Released Successfully!",
+                            "Success",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
         }
     }
 }

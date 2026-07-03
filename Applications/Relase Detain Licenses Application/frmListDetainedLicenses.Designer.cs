@@ -97,15 +97,17 @@
             // 
             // releaseDetainedLicenseToolStripMenuItem
             // 
+            this.releaseDetainedLicenseToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("releaseDetainedLicenseToolStripMenuItem.Image")));
             this.releaseDetainedLicenseToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.releaseDetainedLicenseToolStripMenuItem.Name = "releaseDetainedLicenseToolStripMenuItem";
-            this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
+            this.releaseDetainedLicenseToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.releaseDetainedLicenseToolStripMenuItem.Text = "Release Detained License";
+            this.releaseDetainedLicenseToolStripMenuItem.Click += new System.EventHandler(this.releaseDetainedLicenseToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(261, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(277, 6);
             // 
             // cmsApplications
             // 
@@ -117,28 +119,34 @@
             this.toolStripMenuItem1,
             this.releaseDetainedLicenseToolStripMenuItem});
             this.cmsApplications.Name = "contextMenuStrip1";
-            this.cmsApplications.Size = new System.Drawing.Size(265, 106);
+            this.cmsApplications.Size = new System.Drawing.Size(281, 180);
             // 
             // PesonDetailsToolStripMenuItem
             // 
+            this.PesonDetailsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("PesonDetailsToolStripMenuItem.Image")));
             this.PesonDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.PesonDetailsToolStripMenuItem.Name = "PesonDetailsToolStripMenuItem";
-            this.PesonDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
+            this.PesonDetailsToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.PesonDetailsToolStripMenuItem.Text = "Show Person Details";
+            this.PesonDetailsToolStripMenuItem.Click += new System.EventHandler(this.PesonDetailsToolStripMenuItem_Click);
             // 
             // showDetailsToolStripMenuItem
             // 
+            this.showDetailsToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showDetailsToolStripMenuItem.Image")));
             this.showDetailsToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showDetailsToolStripMenuItem.Name = "showDetailsToolStripMenuItem";
-            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
+            this.showDetailsToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.showDetailsToolStripMenuItem.Text = "&Show License Details";
+            this.showDetailsToolStripMenuItem.Click += new System.EventHandler(this.showDetailsToolStripMenuItem_Click);
             // 
             // showPersonLicenseHistoryToolStripMenuItem
             // 
+            this.showPersonLicenseHistoryToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("showPersonLicenseHistoryToolStripMenuItem.Image")));
             this.showPersonLicenseHistoryToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.showPersonLicenseHistoryToolStripMenuItem.Name = "showPersonLicenseHistoryToolStripMenuItem";
-            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(264, 24);
+            this.showPersonLicenseHistoryToolStripMenuItem.Size = new System.Drawing.Size(280, 38);
             this.showPersonLicenseHistoryToolStripMenuItem.Text = "Show Person License History";
+            this.showPersonLicenseHistoryToolStripMenuItem.Click += new System.EventHandler(this.showPersonLicenseHistoryToolStripMenuItem_Click);
             // 
             // pbPersonImage
             // 
