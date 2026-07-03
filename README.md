@@ -285,19 +285,5 @@ Through this project, I improved my skills in:
 
 ---
 
-## Screenshots
 
-Add your screenshots inside a folder named `Screenshots`.
 
-Example:
-
-```text
-Screenshots/
-│
-├── login.png
-├── main-form.png
-├── manage-people.png
-├── manage-users.png
-├── local-driving-applications.png
-├── license-info.png
-└── international-license.png
